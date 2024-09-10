@@ -1,5 +1,5 @@
 // Exercise 1
-document.write("<cite><strong><p>If I had nine hours to chop down a tree, I'd spend the first six sharpening my ax.</p></strong><br>-Abraham Lincoln</cite><br>")
+// document.write("<cite><strong><p>If I had nine hours to chop down a tree, I'd spend the first six sharpening my ax.</p></strong><br>-Abraham Lincoln</cite><br>")
 
 
 // Exercise 2
@@ -26,10 +26,28 @@ document.write("<cite><strong><p>If I had nine hours to chop down a tree, I'd sp
 // Helpompi kun muuttuja voidaasn määrittää for loopin sisällä, ehdon, ja toiminnan kanssa.
 
 // Array ja join() -metodit
-function repeatingText(phrase, repeats){
-    document.write(Array(repeats).fill(phrase).join("<br>")+ "<br>");
-}
-repeatingText("Testi arraylla", 50);
+// function repeatingText(phrase, repeats){
+//     document.write(Array(repeats).fill(phrase).join("<br>")+ "<br>");
+// }
+// repeatingText("Testi arraylla", 50);
 
 // Monimutkaisen oloinen ja hieman vaikea intuitiivisesti ymmärtää verrattuna edellisiin.
 
+// Exercise 3
+
+// function browser(){
+//     var userAgent = navigator.userAgent;
+//     if (userAgent.indexOf("Firefox") > -1){
+//         return "Mozilla";
+//     } else {
+//         return "Unknown";
+//     }
+// }
+
+// var browserName = browser();
+
+// if (browserName == "Mozilla"){
+//     location.replace("https://www.mozilla.org/en-US/");
+// } else if (browserName == "Unknown"){
+//     location.replace("https://www.google.com/");
+// }
