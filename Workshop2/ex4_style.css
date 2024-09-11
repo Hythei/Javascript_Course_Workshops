@@ -1,0 +1,19 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#prompt_Target{
+    text-align: center;
+    margin-top: 10em;
+    font-size: 3em;
+}
