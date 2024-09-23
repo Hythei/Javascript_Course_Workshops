@@ -17,3 +17,10 @@ header {
     margin-top: 10em;
     font-size: 3em;
 }
+
+#image_Target{
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 2em;
+    width: 50%;
+}
