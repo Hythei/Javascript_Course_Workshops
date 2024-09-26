@@ -9,6 +9,7 @@ document.getElementById("clickBtn").addEventListener("click", function(){
 //document.write() ei ole suositeltu modernissa JavaScriptissä koska se korvaa koko sivun sisällön ja saattaa aiheuttaa ongelmia, joten päätin pienen tutkinnan jälkeen siirtyä käyttämään innerHTML:ää.
 const tableBtn = document.getElementById("tableBtn");
 const taulukko = document.getElementById("taulukko");
+const geolocation = document.getElementById("geolocationBtn");
 
 tableBtn.addEventListener("click", showTable);
 
@@ -98,6 +99,25 @@ function showTable(){
 //         tableBtn.textContent = "Show Table";        
 //     }
 // };
+
+function showPosition(position){
+    const{ latitude, longitude } = position.coords;
+    const locationString = `Latitude: ${latitude}, longitude: ${longitude}`;
+
+    geolocationBtn.innerHTML = locationString;
+
+    console.log(`Latitude: ${latitude}, longitude: ${longitude}`);
+}
+
+function GeolocatiotClick(){
+    if (navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        geolocationBtn.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+geolocation.addEventListener("click", GeolocatiotClick);
 
 // Exercise 2
 const ex2 = document.getElementById("ex2");
