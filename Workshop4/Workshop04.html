@@ -4,6 +4,34 @@
 		<title>Workshop 4</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/styles.css">
+		<script>
+			function changeHeading(){
+				var ex1_teksti = document.querySelector('h1');
+				ex1_teksti.innerHTML = "MODIFIED HEADING"				
+			}
+
+			function secondButton(){
+				var ex2 = document.querySelector('#ex2')
+				ex2.style.fontSize = "x-large";
+				ex2.style.backgroundColor = "blue";
+			}
+			function thirdButton(){
+				var ex3 = document.querySelectorAll("p")
+				if(ex3.length >= 4){
+					ex3.forEach(function(paragraph){
+						paragraph.append("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit");
+					});
+				}
+				document.body.style.backgroundColor = "red"
+			}
+			function hide(){
+				document.querySelector("#me").style.visibility = "none";
+
+			}
+			function show(){
+				document.querySelector("#me").style.visibility = "block";
+			}
+		</script>
 	</head>
 	<body class="ws4">
 		<h1>Workshop 4: DOM Scripting</h1>
@@ -15,8 +43,8 @@
 		<p>&nbsp;Below you will see three buttons. Edit the source code and add an onClick-events to these buttons. Use Developer Console to find the </p>
 		<p>
 		  <button onclick="changeHeading();">Button 1</button>
-		  <button onclick="secondButton">Button 2</button>
-		  <button onclick="">Button 3</button>
+		  <button onclick="secondButton();">Button 2</button>
+		  <button onclick="thirdButton();">Button 3</button>
 		</p>
 
 		<ul>
@@ -27,7 +55,7 @@
 			<strong id="lorem"><em>&quot;Lorem ipsum</em></strong><em> dolor sit amet, consectetuer   adipiscing elit. Sed posuere interdum sem. Quisque ligula eros   ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam   vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget   velit. &quot;</em></li>
 		</ul>
 		<hr/>
-		<h2>Exercise 2: DOM Traversing using ID's and classes</h2>
+		<h2 id = "ex2">Exercise 2: DOM Traversing using ID's and classes</h2>
 		<p class="surprise">Add onchange -events to following checkboxes.</p>
 		<p>
 			<label>
