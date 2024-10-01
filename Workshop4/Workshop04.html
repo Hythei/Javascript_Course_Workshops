@@ -27,6 +27,35 @@
 			function show(){
 				document.querySelector("#me").style.visibility = "block";
 			}
+
+			function surprise(){
+				var Surprise = document.querySelectorAll(".surprise");
+				Surprise.forEach(function(surprise){
+					surprise.style.fontSize = "20px";
+				});
+			}
+
+			// function pulldown_menu(){
+			// 	var menu = document.querySelector("#mySelect");
+			// 	alert(menu.value);
+			// }
+
+			function mouse_on_pic(){
+				pic = document.querySelector("#carimage");
+				pic.style.border = "5px solid red";
+			}
+
+			function mouse_off_pic(){
+				pic = document.querySelector("#carimage");
+				pic.style.border = "none";
+			}
+
+			// The following function's purpose is to change the image based on the user's choice from the dropdrown menu. Changing the image source according to the menu value might not be recommended in this case - perhaps remove the image and add a new one instead using set attribute, for example.
+			function pulldown_menu(){
+				var choice = document.querySelector("#mySelect").value;
+				var image = document. querySelector("#carimage");
+				image.setAttribute('src', choice + ".jpg");
+			}
 		</script>
 	</head>
 	<body class="ws4">
@@ -65,7 +94,7 @@
 			</label>
 			<br>
 			<label>
-				<input type="checkbox" name="CheckboxGroup1" value="3" id="CheckboxGroup1_2"> 
+				<input onchange = "surprise()" type="checkbox" name="CheckboxGroup1" value="3" id="CheckboxGroup1_2"> 
 				<span id="surpise">Surprise</span>
 			</label>
 		</p>
@@ -84,7 +113,7 @@
 				<li>When you have accomplished the above, change the image (id=&quot;carimage&quot;) below based on the users choice on the pulldown menu below. Find appropriate images from the web.
 			</ul>
 		  <p>Select a new car from the list.</p>
-		  <select name="mySelect" id="mySelect" onchange="">
+		  <select name="mySelect" id="mySelect" onchange="pulldown_menu()">
 			<option value="BMW">BMW         
 			<option value="Audi">Audi
 			<option value="Mercedes">Mercedes
@@ -92,7 +121,7 @@
 		  </select>
 		  <br>
 		  <br>
-		<img alt="" onmouseover="" onmouseout="" style="left: 0px; opacity: 1;" src="http://cdn.bmwblog.com/wp-content/uploads/2015/11/BMW-2-Series-Gran-Coupe-Rendering.jpg" width="400" id="carimage"/>
+		<img alt="" onmouseover="mouse_on_pic()" onmouseout="mouse_off_pic()" style="left: 0px; opacity: 1;" src="" width="400" id="carimage"/>
 		<hr/>
 		<h2>Exercise 4: Moving things around</h2>
 		<ul>
