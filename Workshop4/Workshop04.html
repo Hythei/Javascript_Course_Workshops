@@ -50,11 +50,74 @@
 				pic.style.border = "none";
 			}
 
-			// The following function's purpose is to change the image based on the user's choice from the dropdrown menu. Changing the image source according to the menu value might not be recommended in this case - perhaps remove the image and add a new one instead using set attribute, for example.
+
 			function pulldown_menu(){
 				var choice = document.querySelector("#mySelect").value;
 				var image = document. querySelector("#carimage");
 				image.setAttribute('src', choice + ".jpg");
+			}
+
+			function changePosition(){
+				var image = document.querySelector("#carimage");
+				image.style.position = "absolute";
+				image.style.right = "200px";
+				image.style.top = "500px";
+			}
+			function doMove(){
+				var image = document.querySelector("#carimage");
+				let pos = 0;
+				let direction = 1;
+				const imageWidth = image.offsetWidth;
+				const maxPos = window.innerWidth - imageWidth;
+				const minPos = 0;
+				image.style.position = "absolute";
+
+				function move(){
+					pos += direction;
+					image.style.left = pos + "px";
+					if(pos >= maxPos || pos <= minPos){
+						direction *= -1;
+					}
+				}
+				setInterval(move, 1);
+			}
+
+			function fadeOut(){
+				var image = document.querySelector("#carimage");
+				let opacity = 1;
+				function fade(){
+					opacity -= 0.01;
+					image.style.opacity = opacity;
+					if(opacity <= 0){
+						clearInterval(fadeInterval);
+					}
+				}
+				setInterval(fade, 10);
+			}
+
+			function remove(){
+				var image = document.querySelector("#carimage");
+				image.remove();
+			}
+
+			function insertRows(){
+				let table = document.querySelector("#data");
+				let row = table.insertRow();
+				let cell1 = row.insertCell(0);
+				let cell2 = row.insertCell(1);
+				let cell3 = row.insertCell(2);
+
+				let name = document.querySelector("#textfield").value;
+				let position = document.querySelector("#textfield2").value;
+				let salary = document.querySelector("#textfield3").value;
+
+				cell1.innerHTML = name;
+				cell2.innerHTML = position;
+				cell3.innerHTML = salary;
+
+				document.querySelector("#textfield").value ="";
+				document.querySelector("#textfield2").value ="";
+				document.querySelector("#textfield3").value ="";
 			}
 		</script>
 	</head>
@@ -129,8 +192,8 @@
 			<p class="surprise">You can do neat things by editing CSS-rules via  JavaScript. See the examples in lecture slides. Then try these:</p>
 			<ol>
 			  <li><button onclick="changePosition()">Move!</button>Select the div with an id &quot;carimage&quot; and move it 200px left and 500px down</li>
-			  <li><button onclick="setInterval(function(){doMove();},1000); ">Animate</button> Write a  funtion doMove() which  will move the image across the screen, or even better: back and forth on  the screen. The Interval required has already been added to the onclick -event of the list item.</li>
-			  <li><button onclick="setInterval(function(){fadeOut();},250);">Fade out!</button> Wite  a function fadeOut() which will slowly decrease the opacity of the image from 1.0 to  0 making it fade out. The Interval required has already been added to the onclick -event of the list item</li>
+			  <li><button onclick="doMove(); ">Animate</button> Write a  funtion doMove() which  will move the image across the screen, or even better: back and forth on  the screen. The Interval required has already been added to the onclick -event of the list item.</li>
+			  <li><button onclick="fadeOut();">Fade out!</button> Wite  a function fadeOut() which will slowly decrease the opacity of the image from 1.0 to  0 making it fade out. The Interval required has already been added to the onclick -event of the list item</li>
 			  <li><button onclick="remove()">Disappear! </button>Finally, write JavaScript which will remove the image from the page</li>
 			</ol>
 		  </li>
