@@ -4,7 +4,7 @@
 		<title>Workshop 6</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="css/styles.css">
-		<script src="script.js"></script>
+		<script src="script.js" defer></script>
 	</head>
 	<body class="ws6" onload="">
 		<h1>Workshop 6: Using Localstorage</h1>
@@ -53,6 +53,27 @@
 			should be used. Copy the form above here and implement sessionstorage for it. See what 
 			happens, when you close the browser. You can utilize developer tools to study the data (F12, 
 			select Application tab, then LocalStorage on the left).</p>
+		</div>
+		<div>
+			<label for="destination">Destination:</label>
+			<input type="text" name="textfield" id="destination3">
+		</div>
+		<div>
+			<label for="arrival">Arrival Date:</label>
+			<input type="text" name="textfield" id="arrival3">
+		</div>
+		<div id="services3" class="border">
+			<p>Services:</p>
+			<div><label><input type="checkbox" name="CheckboxGroup1" value="Internet" id="CheckboxGroup1_03">Internet</label></div>
+			<div><label><input type="checkbox" name="CheckboxGroup1" value="AC" id="CheckboxGroup1_13">Air Conditioning</label></div>
+			<div><label><input type="checkbox" name="CheckboxGroup1" value="minibar" id="CheckboxGroup1_23">Minibar</label></div>
+			<div><label><input type="checkbox" name="CheckboxGroup1" value="car" id="CheckboxGroup1_33">Car rent</label></div>
+			<div><label><input type="checkbox" name="CheckboxGroup1" value="sauna" id="CheckboxGroup1_43">Sauna</label></div>
+		</div>	
+		<div class="clear">
+			<p>
+			  <input type="button" name="button" id="button3" value="Reserve">
+			</p>
 		</div>
 		<hr/>
 		<div>

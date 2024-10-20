@@ -17,7 +17,7 @@ function parseData(){
 
 //ex2
 let button2 = document.querySelector("#Fetch2");
-button.addEventListener("click", loadXMLFile);
+button2.addEventListener("click", loadXMLFile);
 function loadXMLFile(){
     var xmlhttp = new XMLHttpRequest();
 
@@ -26,7 +26,8 @@ function loadXMLFile(){
 
     xmlhttp.onreadystatechange = function() {
         if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            document.querySelector("#quotes").innerHTML = xmlhttp.responseText;
+            document.querySelector("#quotes").textContent = xmlhttp.responseText;
         }
     }
 }
+// I've encountered a lot of problems with this, so in case this isn't ready by the deadline, I'll just do it in the coming week.
