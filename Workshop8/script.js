@@ -123,7 +123,8 @@ function parseData(){
 }
 
 //EX3
-const WeatherAPI = "api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=b11a8d4aabcd83004344fac1c79b5b51";
+//API piilotettu Githubin julkisen luonteen vuoksi
+const WeatherAPI = "___";
 
 let weatherBtn = document.querySelector("#weather_button");
 let weatherDiv = document.querySelector("#weatherdata");
