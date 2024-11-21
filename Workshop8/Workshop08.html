@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Workshop 8</title>
 		<link rel="stylesheet" href="css/styles.css">
+		<script src="script.js" defer></script>
 	</head>
 	<body class="ws8">
 		<h1>Workshop 8: Parsing JSON/XML with AJAX</h1>
@@ -14,8 +15,8 @@
 		<h2>Exercise 1: JSON Basics</h2>
 		<p>JSON means JavaScript Object Notations, and it means that we will represent data in a format which JavaScript understands as such. No conversions are necessary to use it.</p>
 		<p>
-		  <button>Display the first and lastname only</button>
-		  <button>Display all data</button>
+		  <button id = "nameBtn">Display the first and lastname only</button>
+		  <button id = "allBtn">Display all data</button>
 		</p>
 		<p>Let's try the following. You can create a new JSON dataset in your JavaScript as described below. Then create functions, which will run when the buttons are clicked.</p>
 
@@ -34,8 +35,8 @@
 		<h2>Exercise 2: Parsing JSON from web</h2>
 		<p>Below you see two buttons. Edit the source code and add onClick-events to these buttons. Add functionality to these as described below.</p>
 		<p>
-		  <button>Load raw data</button>
-		  <button>Load and parse the data</button>
+		  <button id = "rawdata_btn">Load raw data</button>
+		  <button id = "parse_btn">Load and parse the data</button>
 		</p>
 
 		<ul>
@@ -54,7 +55,7 @@
 		<p>Sample call to the REST API could be like this: <a href="http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=JSON&APPID=ff64c247a136f706923d1ee0d55d71e2">http://api.openweathermap.org/data/2.5/weather?q=Helsinki&units=metric&mode=JSON&APPID=ff64c247a136f706923d1ee0d55d71e2
 		</a>. Click to see the response.</p>
 		<ul>
-			<li>First develop the app to display raw weather information (Temperature, Clouds, Humidity) on one spesific city, when the button is clicked. <button>Get data</button> </li>
+			<li>First develop the app to display raw weather information (Temperature, Clouds, Humidity) on one spesific city, when the button is clicked. <button id = "weather_button">Get data</button> </li>
 			<li>When you achieve this, then parse the data and output it to div</li>
 			<li>When you have achieved this, implement an onchange-event on the pulldown menu, which will allow the user to select which city's data will be shown from a list of cities</li>
 			<li>When you have completed this, add functionality to an input field, in which the user can write search queries which are sent to the OpenWeatherMap API and the system will run a search query which is retuned to your app.</li>
