@@ -42,7 +42,6 @@ function Check_GetData(){
     let index = 0;
     while (localStorage.getItem(`checkbox_${index}`) !== null){
         let checkboxes = document.createElement("div");
-        // "?" is a ternary operator, basically a shorthand way of writing an if-else statement. "condition ? value_if_true : value_if_false". Neat.
         checkboxes.textContent = `Checkbox ${index + 1}: ${localStorage.getItem(`checkbox_${index}`) === `true` ? `Checked` : `Unchecked`}`;
         target.appendChild(checkboxes);
         index++;
