@@ -10,7 +10,6 @@ function SaveData(){
     localStorage.setItem("destination", destination);
     localStorage.setItem("arrival", arrival);
     
-    // I've finally understood the logic behind the elusive "=>", it's a simpler way of declaring an undefined function. Probably. Most likely.
     let checkboxes = document.querySelectorAll("#services input[type='checkbox']");
     checkboxes.forEach((checkbox, index) => {
         localStorage.setItem(`checkbox_${index}`, checkbox.checked);
