@@ -124,24 +124,38 @@ function parseData(){
 
 //EX3
 //API piilotettu Githubin julkisen luonteen vuoksi
-const WeatherAPI = "___";
 
+let dropdownList = document.querySelector("#city");
 let weatherBtn = document.querySelector("#weather_button");
 let weatherDiv = document.querySelector("#weatherdata");
 
-weatherBtn.addEventListener("click", getWeather);
+// weatherBtn.addEventListener("click", getWeather);
+dropdownList.addEventListener("change", getWeather);
 
+//Tässä vaiheessa API on hyvä olla funktion sisällä dynaamisten muutosten vuoksi.
 function getWeather(){
+    let query = dropdownList.value;
+    const WeatherAPI = `https://papi.openweathermap.org/data/2.5/weather?q=${query}APPID=b11a8d4aabcd83004344fac1c79b5b51$units=metric`;
     fetch(WeatherAPI)
         .then(response =>{
             if (!response.ok){
                 throw new Error ("Weather Machine Broke");
             }
-            return response.JSON();
+            return response.json();
         })
         .then(data =>{
-            weatherDiv.innerHTML = JSON.stringify(data);
+            let temperature = data.main.temp;
+            let humidity = data.main.humidity;
+            let clouds = data.clouds.all;
+            
+            weatherDiv.innerHTML = `
+            <td>Temp: ${temperature}</td>
+            <td>Humidity: ${humidity}</td>
+            <td>Cloudy: ${clouds}</td>`;
+            
         })
 
 
 }
+
+//Myönnettäköön suoraan, että minulla on aika paljon ilmenny Cross-Origin Request ongelmia näiden API tehtävien kanssa, jopa Moesif CORS lisäosan kanssa, sekä eri selaimilla, että jätän tämän tehtävän tähän. Seuraava vaihe olisi hakukentän muuttujien ja napin julistaminen ja funktion muokkaaminen siten että se hakee tietoa annetusti. Joissain määrin samanlainen toimintaperiaate kuin tekemässäni AJAX-projektissa.
